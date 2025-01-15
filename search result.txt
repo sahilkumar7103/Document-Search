@@ -1,0 +1,38 @@
+import React from "react";
+import { useStore } from "../utils/store";
+import { FileText } from "lucide-react";
+
+export function SearchResults() {
+  const { searchResults, isLoading, setSelectedDocument } = useStore();
+
+  if (isLoading) {
+    return (
+      <div className="mt-8 text-center">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500 mx-auto"></div>
+      </div>
+    );
+  }
+
+  if (searchResults.length === 0) return null;
+
+  return (
+    <div className="mt-8">
+      <h2 className="text-lg font-semibold mb-4">Search Results</h2>
+      <div className="space-y-4">
+        {searchResults.map((result) => result && (
+          <button
+            key={result.id}
+            className="w-full text-left p-4 bg-white border rounded-lg shadow-sm hover:shadow-md transition-shadow"
+            onClick={() => setSelectedDocument(result)}
+          >
+            <div className="flex items-center gap-2 mb-2">
+              <FileText className="w-4 h-4 text-gray-500" />
+              <span className="font-medium text-gray-900">{result.filename}</span>
+            </div>
+            <p className="text-gray-700 line-clamp-3">{result.content}</p>
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
