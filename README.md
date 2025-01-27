@@ -1,20 +1,21 @@
 # Document-Search 
 A web application that allows users to upload, search, view, and manage documents efficiently. Built with React for the frontend and FastAPI for the backend, the application uses MongoDB Atlas as the database and supports text-based search functionality.
 
-Features
-Upload documents in PDF or DOCX format.
-Extracts and stores text content from uploaded documents.
-Search functionality using MongoDB's full-text search.
-View document details such as filename, upload date, and content.
-Delete uploaded documents from the database.
-Error handling for unsupported file types or failed operations.
+Features 
+                                                                                                                                                                                                                          . Upload documents in PDF or DOCX format.
+. Extracts and stores text content from uploaded documents.
+. Search functionality using MongoDB's full-text search.
+. View document details such as filename, upload date, and content.
+. Delete uploaded documents from the database.
+. Error handling for unsupported file types or failed operations. 
+
 Tech Stack
 Frontend
-React: Interactive UI for document upload and search.
-Zustand: State management for managing search results, selected documents, and app state.
-Backend
-FastAPI: Handles document upload, search, and management.
-MongoDB Atlas: Stores documents and performs text-based search queries.
+. React: Interactive UI for document upload and search.
+. Zustand: State management for managing search results, selected documents, and app state.
+. Backend
+. FastAPI: Handles document upload, search, and management.
+. MongoDB Atlas: Stores documents and performs text-based search queries.
 Other Tools
 PyPDF2: Extracts text from PDF files.
 python-docx: Extracts text from DOCX files.
